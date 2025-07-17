@@ -1,4 +1,4 @@
-interface CosmicObject {
+export interface CosmicObject {
   id: string;
   slug: string;
   title: string;
@@ -8,7 +8,7 @@ interface CosmicObject {
   modified_at: string;
 }
 
-interface Post extends CosmicObject {
+export interface Post extends CosmicObject {
   type: 'posts';
   metadata: {
     title: string;
@@ -25,7 +25,7 @@ interface Post extends CosmicObject {
   };
 }
 
-interface Category extends CosmicObject {
+export interface Category extends CosmicObject {
   type: 'categories';
   metadata: {
     name: string;
@@ -34,7 +34,7 @@ interface Category extends CosmicObject {
   };
 }
 
-interface Author extends CosmicObject {
+export interface Author extends CosmicObject {
   type: 'authors';
   metadata: {
     name: string;
@@ -50,14 +50,14 @@ interface Author extends CosmicObject {
   };
 }
 
-function isPost(obj: CosmicObject): obj is Post {
+export function isPost(obj: CosmicObject): obj is Post {
   return obj.type === 'posts';
 }
 
-function isCategory(obj: CosmicObject): obj is Category {
+export function isCategory(obj: CosmicObject): obj is Category {
   return obj.type === 'categories';
 }
 
-function isAuthor(obj: CosmicObject): obj is Author {
+export function isAuthor(obj: CosmicObject): obj is Author {
   return obj.type === 'authors';
 }
